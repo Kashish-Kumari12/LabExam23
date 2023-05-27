@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function UserParticipation(props) {
+    const navigate=useNavigate();
     const [skills, setSkills] = useState([]);
     const [count, setCount]=useState(0);
     
@@ -23,7 +25,7 @@ function UserParticipation(props) {
            <input type="checkbox" value="JavaScript"/>Java
            <input type="checkbox" value="JavaScript"/>Python
            <input type="checkbox" value="JavaScript"/>C#
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={()=>navigate("thankyou")}>Submit</button>
             </form>
         </div>
     );
