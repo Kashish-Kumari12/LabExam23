@@ -1,7 +1,9 @@
 import { spacing } from '@mui/system';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PollDisplay(props) {
+    const navigate=useNavigate();
     const [poll,setPoll]=useState({
         "question": "What is your favorite programming language?",
 
@@ -18,6 +20,9 @@ function PollDisplay(props) {
       
         ]
     })
+    const StartButton=()=>{
+        
+    }
     return (
         <div>
             <div>
@@ -29,7 +34,9 @@ function PollDisplay(props) {
                         {items.votes}
                         </h3>)
                     )}
+
                   </div>
+                  <button onClick={()=>navigate('userParticipate')}>Start</button>
             </div>
         </div>
     );

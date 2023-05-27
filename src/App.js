@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-
+import PollDisplay from './PollDisplay';
+import UserParticipation from './UserParticipation';
+import Task2 from './Task2';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ThankyouMessage from './ThankyouMessage';
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Polling App</h1>
+      <PollDisplay/>
+      <Routes>
+        <Route path="userParticipate" element={<UserParticipation/>}/>
+        <Route path="userParticipate/thankyou" element={<ThankyouMessage/>}/>
+      </Routes>
+      
+
+       
+        {/* <Task2/> */}
     </div>
+    </BrowserRouter>
   );
 }
 
